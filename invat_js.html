@@ -1,18 +1,117 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script language="Javascript" src="js/script.js">
-</script>
-</head>
+  <link rel="stylesheet" href="css/stil.css">
+  <link rel="shortcut icon" href="/PATH_TO_STATIC_FAVICON/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/PATH_TO_ANIMATED_FAVICON/favicon.ico" type="image/x-icon">
+<title>InvatJs</title>  
+</head> 
 <body>
+<h1>Programare Web</h1>
+<h2>InvatJs</h2>
+<div class="layouts">
+    <div id="layout1">Layout 1: <button onclick="fourbyone()" id="fourbyone">4x1</button></div>
+    <div id="layout2">Layout 2: <button onclick="onebyfour()" id="onebyfour">1x4</button></div>
+    <div id="layout3">Layout 3: <button onclick="twobytwo()" id="twobytwo">2x2</button> </div>
+ </div>
+<aside class="onebyfour twobytwo fourbyone " id="aside" style="clear:left">
+    <!-- <h2>Secțiuni:</h2> -->
+    <section id="section1" class="marginesectiuni">
+        <heading>
+            <h4>Sectiunea 1:</h4>
+        </heading>
+<button id="detalii" type="button" onclick="afisareDetalii()">Vezi detaliile</button>
+<p id="data"></p>
+<p id="browser"></p>
+<p id="version_browser"></p>
+<p id="URL"></p>
+<p id="locationURL"></p>
+<p id="os"></p>
+<p id="loc"></p>
+</section>
 
+<section id="section2" class="marginesectiuni">
+<h4>Secțiunea 2:</h4>
+<div>Completați cele 8 numere:</div>
+<div class="casute">
+  <form id="lotoform">
+    <label for="c1"></label>
+    <input type="text" pattern="[A-Z0-9]{2}" id="c1" name="c1" /><br />
+    <label for="c2"></label>
+    <input type="text" pattern="[A-Z0-9]{2}" id="c2" name="c2" /><br />
+    <label for="c3"></label>
+    <input type="text" pattern="[A-Z0-9]{2}" id="c3" name="c3" /><br />
+    <label for="c4"></label>
+    <input type="text" pattern="[A-Z0-9]{2}" id="c4" name="c4" /><br />
+    <label for="c5"></label>
+    <input type="text" pattern="[A-Z0-9]{2}" id="c5" name="c5" /><br />
+    <label for="c6"></label>
+    <input type="text" pattern="[A-Z0-9]{2}" id="c6" name="c6" /><br />
+    <label for="c7"></label>
+    <input type="text" pattern="[A-Z0-9]{2}" id="c7" name="c7" /><br />
+    <label for="c8"></label>
+    <input type="text" pattern="[A-Z0-9]{2}" id="c8" name="c8" /><br />
+  </form>
+</div>
+<button id="lotobutton" onclick="loto()">
+  Generează numerele câștigătoare
+</button>
+<p id="loto"></p>
+<p id="loto2"></p>
+</section>
 
+<section id="section3" class="marginesectiuni">
+<h4>Secțiunea 3:</h4>
+<p>Alegeți culorile cu care vreți sa desenați formele geometrice:</p>
+<form id="colorpicker">
+  <label for="fill">Culoarea de umplere:</label>
+  <input type="color" id="fillcolor" value="#ff0000" name="fillcolor" />
+  <br /><br />
+  <label for="stroke">Culoarea marginii:</label>
+  <input
+    type="color"
+    id="strokecolor"
+    name="strokecolor"
+    value="#0000ff"
+  />
+</form>
+<br />
+<canvas id="canvas" width="700" height="400" onclick="drawCanvas()">
+</canvas>
+</section>
 
-<button type="button" onclick="Demo()">
-InvatJs</button>
-
-<p id="demo"></p>
-
+<section id="section4" class="marginesectiuni">
+<h4>Secțiunea 4:</h4>
+<p>
+  <form id="inserare">
+  <label for="lincol"
+    >Specificați pozița/coloana din tabel în care doriți să se facă
+    inserarea:</label >
+  <input type="text" id="nrcollin" name="nrcollin" />
+  <br>
+  <label for="colorcells">Culoarea celulelor inserate:</label>
+  <input type="color" id="cellcolor" name="cellcolor" value="#44ffdd" >
+  <br>
+  <button  type="button" id="linii" name="linii">
+  Inserați liniile
+  </button>
+ <button type="button"id="coloane" name="coloane">Inserați coloanele</button>
+  </form>
+</p>
+<table id="invatjs" contenteditable="true">
+  <tr>
+    <td>1</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>4</td>
+  </tr>
+</table>
+<br>
+</section>
+<br>
+</aside>
 </body>
-</html> 
-
+<h6><i>Mocanu Amalia-Mihaela</i><i><br>1308B</br></i></h6>
+</html>
