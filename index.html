@@ -1,28 +1,44 @@
 <!DOCTYPE html>
-<html>
- <head>
-  <link rel="stylesheet" href="f1.css">
-</head> 
-<body>
-<section>
-<h1 > Acasa </h1>
-<p class="index">Aceasta este o introducere pentru paginile "Inregistreaza", "Video" si "Despre"</p>
-</section>
-
-<section>
-<h1 > Inregistreaza </h1>
-<p >Pagina Înregistrează va permite crearea și completarea profilului personal al unui utilizator </p>
-</section>
-
-<section>
-<h1 >Video</h1>
-<p >Pagina Video va conține mai multe fișiere video de pe YouTube.  </p>
-</section>
-
-<section>
-<h1 >Despre</h1>
-<p >Adaptare pagina anterioara</p>
-</section>
-
-
+<html lang="ro">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="CSS/stil.css" type="text/css"/>
+        <link rel="shortcut icon" type="img" href="favicon.ico"/>
+        <script src="js/script.js"></script>
+        <title>Proiect</title>   
+    </head>
+    <body>
+        <h1>
+            <img src="imagini/imagine.png"  alt="web" height="40"> Proiect Programare Web
+        </h1>
+       
+        <hr>
+        <nav>
+            <a onclick="schimbaContinut('acasa','/js/script.js','')">Acasă</a>
+            &nbsp;&nbsp;&nbsp;
+            <a onclick="schimbaContinut('inregistreaza','/js/script.js','')">Înregistrează</a>
+            &nbsp;&nbsp;&nbsp;
+            <a onclick="schimbaContinut('video','/js/script.js','')">Video</a>
+            &nbsp;&nbsp;&nbsp;
+            <a onclick="schimbaContinut('desen','/js/script.js','')">Desen</a>
+            &nbsp;&nbsp;&nbsp;
+            <a onclick="schimbaContinut('despre_html','/js/script.js','')">Despre</a>
+            &nbsp;&nbsp;&nbsp;
+            <a onclick="schimbaContinut('invat_js','/js/script.js','')">Învăț JS</a>
+            &nbsp;&nbsp;&nbsp;
+            <a onclick="schimbaContinut('persoane', '/js/persoane.js', '')">Persoane</a>
+            &nbsp;&nbsp;&nbsp;
+            <a onclick="schimbaContinut('verifica','/js/script.js','')">Verifică</a>
+            &nbsp;&nbsp;&nbsp;
+            <a onclick="schimbaContinut('cumparaturi','/js/cumparaturi.js','')">Cumpărături</a>
+          </nav>
+        <main id="continut">
+       
+        </main> 
+        <footer>
+        &copy;.2021.Programare Web 
+        
+        </footer>   
+    </body>
+    <h6><i>Mocanu Amalia-Mihaela</i><i><br>1308B</br></i></h6> 
 </html>
