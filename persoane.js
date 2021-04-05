@@ -16,6 +16,18 @@ function adaugaPersoana(persoana){
     let td2=document.createElement("td");
     td2.innerHTML=persoana.varsta["#text"];
     tr.appendChild(td2);
+    
+    let td3=document.createElement("td");
+    td3.innerHTML=persoana.tel["#text"];
+    tr.appendChild(td3);
+    
+    let td4=document.createElement("td");
+    td4.innerHTML=persoana.localitate["#text"];
+    tr.appendChild(td4);
+    
+    let td5=document.createElement("td");
+    td5.innerHTML=persoana.judet["#text"];
+    tr.appendChild(td5);
   
     tabel.appendChild(tr);
   }
