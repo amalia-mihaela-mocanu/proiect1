@@ -22,7 +22,7 @@ while True:
 		buf = clientsocket.recv(1024)
 		if len(buf) < 1:
 			break
-		cerere = cerere + buf.decode()
+		cerere = buf.decode()
 		print ('S-a citit mesajul: \n---------------------------\n' + cerere + '\n---------------------------')
 		pozitie = cerere.find('\r\n')
 		if (pozitie > -1 and linieDeStart == ''):
@@ -35,61 +35,49 @@ while True:
 		print ('S-a terminat comunicarea cu clientul - nu s-a primit niciun mesaj.')
 		continue
 	# interpretarea sirului de caractere `linieDeStart`
-	elementeLineDeStart = linieDeStart.split()
+	elementeLineDeStart = linieDeStart.split(' ')
 	# TODO securizare
 	numeResursaCeruta = elementeLineDeStart[1]
-	if numeResursaCeruta == '/':
-		numeResursaCeruta = '/index.html'
 	
 	# calea este relativa la directorul de unde a fost executat scriptul
-	numeFisier = '../continut' + numeResursaCeruta
-	
-	fisier = None
+	numeFisier = 'continut' + numeResursaCeruta
+
 	try:
 		# deschide fisierul pentru citire in mod binar
-		fisier = open(numeFisier,'rb')
-
+		fisier = open(numeFisier,'rb').read()
+		content = ''
 		# tip media
-		numeExtensie = numeFisier[numeFisier.rfind('.')+1:]
-		tipuriMedia = {
-			'html': 'text/html',
-			'css': 'text/css',
-			'js': 'application/js',
-			'png': 'image/png',
-			'jpg': 'image/jpeg',
-			'jpeg': 'image/jpeg',
-			'gif': 'image/gif',
-			'ico': 'image/x-icon',
-			'xml': 'application/xml',
-			'json': 'application/json'
-		}
-		tipMedia = tipuriMedia.get(numeExtensie,'text/plain')
+		numeExtensie = numeFisier.split('.')[1]
+		if numeExtensie in ['html', 'css', 'xml']:
+			content = 'text/' + numeExtensie
+		elif numeExtensie in ['png', 'jpeg', 'gif']:
+			content = 'image/' + numeExtensie
+		elif numeExtensie == 'js':
+			content = 'application/javascript'
+		elif numeExtensie == 'jpg':
+			content = 'image/jpeg'
+		elif numeExtensie == 'ico':
+			content == 'image/x-icon'
 		
 		# se trimite raspunsul
 		clientsocket.sendall(('HTTP/1.1 200 OK\r\n').encode('UTF-8'))
 		clientsocket.sendall(('Content-Length: ' + str(os.stat(numeFisier).st_size) + '\r\n').encode('UTF-8'))
-		clientsocket.sendall(('Content-Type: ' + tipMedia +'\r\n').encode('UTF-8'))
+		clientsocket.sendall(('Content-Type: ' + content +'\r\n').encode('UTF-8'))
 		clientsocket.sendall(('Server: My PW Server\r\n').encode('UTF-8'))
 		clientsocket.sendall(('\r\n').encode('UTF-8'))
-		
-		# citeste din fisier si trimite la server
-		buf = fisier.read(1024)
-		while (buf):
-			clientsocket.send(buf)
-			buf = fisier.read(1024)
+		clientsocket.sendall(fisier)
+	
 	except IOError:
 		# daca fisierul nu exista trebuie trimis un mesaj de 404 Not Found
 		msg = 'Eroare! Resursa ceruta ' + numeResursaCeruta + ' nu a putut fi gasita!'
 		print (msg)
 		clientsocket.sendall(('HTTP/1.1 404 Not Found\r\n').encode('UTF-8'))
-		clientsocket.sendall(('Content-Length: ' + str(len(msg.encode('utf-8'))) + '\r\n').encode('UTF-8'))
-		clientsocket.sendall(('Content-Type: text/plain\r\n').encode('UTF-8'))
+		clientsocket.sendall(('Content-Length: ' + str(len(msg)) + '\r\n').encode('UTF-8'))
+		clientsocket.sendall(('Content-Type: text/html\r\n').encode('UTF-8'))
 		clientsocket.sendall(('Server: My PW Server\r\n').encode('UTF-8'))
 		clientsocket.sendall(('\r\n').encode('UTF-8'))
 		clientsocket.sendall((msg).encode('UTF-8'))
 
 	finally:
-		if fisier is not None:
-			fisier.close()
-	clientsocket.close()
+		clientsocket.close()
 	print ('S-a terminat comunicarea cu clientul.')
