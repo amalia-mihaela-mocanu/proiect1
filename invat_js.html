@@ -2,8 +2,10 @@
 <html>
 <head>
   <link rel="stylesheet" href="css/stil.css">
-  <link rel="shortcut icon" href="/PATH_TO_STATIC_FAVICON/favicon.ico" type="image/x-icon">
-<link rel="icon" href="/PATH_TO_ANIMATED_FAVICON/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <script src="js/script.js"></script>
+        
+        <script src="js/persoane.js"></script>
 <title>InvatJs</title>  
 </head> 
 <body>
@@ -58,27 +60,29 @@
 </button>
 <p id="loto"></p>
 <p id="loto2"></p>
-</section>
 
 <section id="section3" class="marginesectiuni">
-<h4>Secțiunea 3:</h4>
-<p>Alegeți culorile cu care vreți sa desenați formele geometrice:</p>
-<form id="colorpicker">
-  <label for="fill">Culoarea de umplere:</label>
-  <input type="color" id="fillcolor" value="#ff0000" name="fillcolor" />
-  <br /><br />
-  <label for="stroke">Culoarea marginii:</label>
-  <input
-    type="color"
-    id="strokecolor"
-    name="strokecolor"
-    value="#0000ff"
-  />
-</form>
-<br />
-<canvas id="canvas" width="700" height="400" onclick="drawCanvas()">
-</canvas>
+  <h4>Secțiunea 3:</h4>
+  <p>Alegeți culorile cu care vreți sa desenați formele geometrice:</p>
+  <form id="colorpicker">
+    <label for="fill">Culoarea de umplere:</label>
+    <input type="color" id="fillcolor" value="#ff0000" name="fillcolor" />
+    <br /><br />
+    <label for="stroke">Culoarea marginii:</label>
+    <input
+      type="color"
+      id="strokecolor"
+      name="strokecolor"
+      value="#0000ff"
+    />
+  </form>
+  <br />
+  <canvas id="canvas" width="700" height="400" onclick="drawCanvas()">
+  </canvas>
 </section>
+
+
+
 
 <section id="section4" class="marginesectiuni">
 <h4>Secțiunea 4:</h4>
@@ -112,6 +116,7 @@
 </section>
 <br>
 </aside>
+
 </body>
-<h6><i>Mocanu Amalia-Mihaela</i><i><br>1308B</br></i></h6>
+
 </html>
