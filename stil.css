@@ -1,24 +1,22 @@
-
-
-.index{
+/*.index{
 
   background-color:grey;
 
 
-}
+} */
 
-h1{
+/*h1{
    color:solid magenta;
    font-size:100%;
    font-family:"Lucida Console","Courier New",monospace;
 }
-
+*/
 body{
-  background-color: #3F6;
+  background-color: #FFCC66;
 
 }
 h6{
-  color:indigo;
+  color:black;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   text-align:right;
 }
@@ -37,10 +35,10 @@ label
  
 }
 
-form
+/*form
 {
 border:5px solid #090;
-}
+} */
 
 p
 {
@@ -53,7 +51,7 @@ main{
   min-height: 600px;
 }
 nav{
-  background: #9099A2;
+  background:#FF6633;
   padding: 5px;
   display: flex;
   justify-content: space-around;
@@ -61,7 +59,7 @@ nav{
 nav a{
   border:1px solid black;
   border-collapse: collapse;
-  background-color: #D5D5D5;
+  background-color: #FFFF66;
   color: black;
   text-align: center;
   padding: 5px;
@@ -85,7 +83,7 @@ a:hover {
 
 /* selected link */
 a:active {
-  color: red;
+  color: orangered;
 }
 p.intro::first-letter {
   color:black;
@@ -100,10 +98,10 @@ table {
 tr, td {
   padding: 8px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #FF3333;
 }
 
-tr:hover {background-color:#f5f5f5;}
+tr:hover {background-color:orangered;}
 
 videos {
   display: flex;
@@ -119,7 +117,7 @@ videos iframe {
 
 #rcorners {
   border-radius: 25px;
-  border: 2px solid gray;
+  border: 2px solid #FF6600;
 }
 
 #canvas {
@@ -143,7 +141,7 @@ videos iframe {
 }
 
 .marginesectiuni {
-  border: 1px solid black;
+  border: 1px solid #FF6600;
   margin: 4px;
 
 }#tabdespre tr td{
@@ -172,3 +170,4 @@ videos iframe {
   border:1px solid black;
   margin: 4px;
 }
+
