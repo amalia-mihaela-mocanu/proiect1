@@ -1,7 +1,8 @@
 
+
 .index{
 
-  background-color: yellow;
+  background-color:grey;
 
 
 }
@@ -13,7 +14,7 @@ h1{
 }
 
 body{
-  background-color:moccasin	;
+  background-color: #3F6;
 
 }
 h6{
@@ -23,7 +24,7 @@ h6{
 }
 .inregistreaza
 {
-  background-color:Yellow;
+  background-color:grey;
    color:solid black;
    font-family:"Lucida Console","Courier New",monospace;
 }
@@ -38,7 +39,7 @@ label
 
 form
 {
-border:5px solid plum;
+border:5px solid #090;
 }
 
 p
@@ -69,17 +70,17 @@ nav a{
 }
 
 a:link {
-  color:magenta;
+  color: #00C;;
 }
 
 /* visited link */
 a:visited {
-  color: magenta;
+  color: #00C;
 }
 
 /* mouse over link */
 a:hover {
-  color: hotpink;
+  color: orangered;
 }
 
 /* selected link */
