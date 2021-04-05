@@ -140,17 +140,17 @@ function afisareDetalii() {
 
 
   function validare() {
-    var text = '{"utilizator":"test", "parola":"test"}';
+    var text = '{"utilizator":"amalia", "parola":"amalia"}';
     var obj = JSON.parse(text);
     if (
       obj.utilizator == document.getElementById("utilizator").value &&
       obj.parola == document.getElementById("parola").value
     ) {
       document.getElementById("validare").innerHTML =
-        "Utilizator și parolă corecte!";
+        "Corect!";
     } else {
       document.getElementById("validare").innerHTML =
-        "Utilizator sau parolă incorecte!";
+        "Incorect!";
     }
     return false;
   }
